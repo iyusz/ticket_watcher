@@ -29,7 +29,7 @@ def get_bili_status():
 
 def mail_sender(text,subject):
     sender = '@qq.com'  # 发件人邮箱
-    #receiver = '903238891@qq.com'  # 收件人邮箱 单收件人
+    #receiver = '@qq.com'  # 收件人邮箱 单收件人
     receiver = ['1111@qq.com', '11111@qq.com'] #收件人邮箱，多收件人
     sender1='@qq.com'  #发件人邮箱
     mail_pass = ''  # 邮箱授权码
@@ -86,13 +86,13 @@ while(True):
 
     #进入规定时间高频模式
     if current_hour == '17' or current_hour == '18' or current_hour == '19' :
-        sleep_time_high=random.randint(0,10)
+        sleep_time_high=random.randint(0,60)
         print('当前时间：', current_time, '场次为：',status['data']['screen_list'][1]['name'],"场次状态",status['data']['screen_list'][1]['ticket_list'][0]['clickable'],'状态为：', status['data']['sale_flag'],'休息：',sleep_time_high,'s   ', '高频模式')
         time.sleep(sleep_time_high)
         continue
 
     #其他时间进入低频模式
-    sleep_time_low=random.randint(0, 60)
+    sleep_time_low=random.randint(0, 300)
     print('当前时间：', current_time, '场次为：',status['data']['screen_list'][1]['name'],"场次状态",status['data']['screen_list'][1]['ticket_list'][0]['clickable'],'状态为：',status['data']['sale_flag'], '休息：', sleep_time_low, 's   ',
           '低频模式')
 
